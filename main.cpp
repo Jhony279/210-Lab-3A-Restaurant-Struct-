@@ -12,7 +12,8 @@ struct Restruant{
     bool openLate;
 };
 
-const int daysIneWeek = 7;
+const int daysIneWeek = 7;      // Amount of days in a week
+const int restruantStored = 4;  // The amount of restruants to save info for
 
 // Function Prototypes:
 
@@ -23,9 +24,16 @@ void displayRestruantInfo(Restruant);
 // arguments: 
 // returns: 
 int main() {
-    Restruant restruant1 = getRestruantInfo();
+    Restruant savedRestruant[restruantStored];
 
-    displayRestruantInfo(restruant1);
+    for (i = 0; i < restruantStored; i++){
+        savedRestruant[i] = getRestruantInfo();
+    }
+
+    for (i = 0; i < restruantStored; i++){
+        displayRestruantInfo(restruant1);
+    }
+    
     return 0;
 }
 
@@ -63,15 +71,15 @@ Restruant getRestruantInfo(){
 
     cout << "How many days a week is the restruant open: ";
     cin >> restruant.amountOfDaysOpen;
-    while ((restruant.amountOfDaysOpen - 0) > daysIneWeek ||  isalpha(restruant.amountOfDaysOpen)){
+    while ((restruant.amountOfDaysOpen - '0') > daysIneWeek ||  isalpha(restruant.amountOfDaysOpen)){
         cout << "Invalid input enter a number from 1- 7\n";
         cin.clear();
         cin.ignore(1000, '\n');
         cout << "How many days a week is the restruant open: ";
         cin >> restruant.amountOfDaysOpen;
     }
-    
     cin.ignore(1000, '\n'); // Clear out remaining input before requesting next
+    
     cout << "What is the restruants phone number: ";
     cin >> restruant.storeNumber;
 
