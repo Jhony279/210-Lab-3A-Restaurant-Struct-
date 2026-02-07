@@ -5,7 +5,7 @@ using namespace std;
 
 // Function Prototypes:
 
-void getRestruantInfo();
+Restruant getRestruantInfo();
 
 struct Restruant{
     string name;
@@ -23,11 +23,14 @@ int main() {
     return 0;
 }
 
-// Function Definitions:
-
-void getRestruantInfo(){
+/**
+ * @brief Creates a temporary `Restruant` struct by asking user for restruant
+ * input from the console to feed into struct members.
+ * @return restruant struct members to then pass and use in main function.
+*/
+Restruant getRestruantInfo(){
     Restruant restruant;
-    
+
     cout << "-------------- Restruant Information --------------" << endl;
     cout << "Enter the name of the restruant: ";
     getline(cin, restruant.name);
@@ -37,7 +40,7 @@ void getRestruantInfo(){
     cin >> boolalpha >> restruant.openLate;
     cout << "Enter the amount of days the restruant is open: ";
     cin >> restruant.amountOfDaysOpen;
-    cin.ignore(1000, '\n'); // Clear out remaining input before requesting next 
+    cin.ignore(1000, '\n'); // Clear out remaining input before requesting next
     cout << "Enter the phone number of the restruant: ";
     cin >> restruant.storeNumber;
 }
