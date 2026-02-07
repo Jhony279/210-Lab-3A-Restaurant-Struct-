@@ -10,8 +10,8 @@ void getRestruantInfo();
 struct Restruant{
     string name;
     string adress;
-    int storeNumber;
-    int amountOfDaysOpen;
+    float storeNumber;
+    float amountOfDaysOpen;
     bool openLate;
 };
 
@@ -29,9 +29,9 @@ void getRestruantInfo(){
     Restruant restruant;
     cout << "------------------- Restruant Information -------------------" << endl;
     cout << "Enter the name of the restruant: ";
-    cin >> restruant.name;
+    getline(cin, restruant.name);
     cout << "Enter the adress of the restruant: ";
-    cin >> restruant.adress;
+    getline(cin, restruant.adress);
     cout << "Enter the phone number of the restruant: ";
     cin >> restruant.storeNumber;
     cout << "Enter the amount of days the restruant is open: ";
