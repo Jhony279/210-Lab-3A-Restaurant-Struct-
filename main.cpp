@@ -1,6 +1,7 @@
 // COMSC-210 | Lab 3A | Johnathan Perez Baltazar
 
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
 struct Restruant{
@@ -52,9 +53,11 @@ Restruant getRestruantInfo(){
 }
 
 void displayRestruantInfo(Restruant restruantInfo){
-    cout << "--Restruant: " << restruantInfo.name << " information--" << endl;
+    
+    cout << "\n------------------  Restruant: " << restruantInfo.name 
+        << " - information  ------------------" << setw(2) << endl;
     cout << "Adress: " << restruantInfo.adress << endl;
     cout << "Phone Number: " << restruantInfo.storeNumber << endl;
     cout << "Days open a week: " << restruantInfo.amountOfDaysOpen << endl;
-    cout << (restruantInfo.openLate ? "Store stays open late" : "Store closes early");
+    cout << "Store stays open late? : " << (restruantInfo.openLate ? "Yes" : "No");
 }
