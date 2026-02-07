@@ -5,6 +5,8 @@ using namespace std;
 
 // Function Prototypes:
 
+void getRestruantInfor();
+
 struct Restruant{
     string name;
     string adress;
@@ -21,6 +23,8 @@ int main() {
 }
 
 // Function Definitions:
+
+
 
 // Reminder lines must be 80 characters or less, no more than one empty line, no magic numbers,
 // and Reminder to comment code where neccessary.
