@@ -14,6 +14,7 @@ struct Restruant{
 // Function Prototypes:
 
 Restruant getRestruantInfo();
+void displayRestruantInfo();
 
 // <description>
 // arguments: 
@@ -32,7 +33,7 @@ int main() {
 Restruant getRestruantInfo(){
     Restruant restruant;
 
-    cout << "-------------- Restruant Information --------------" << endl;
+    cout << "------------- Enter Restruant Information -------------" << endl;
     cout << "Enter the name of the restruant: ";
     getline(cin, restruant.name);
     cout << "Enter the adress of the restruant: ";
@@ -46,4 +47,9 @@ Restruant getRestruantInfo(){
     cin >> restruant.storeNumber;
 
     return restruant;
+}
+
+void displayRestruantInfo(Restruant restruantInfo){
+    cout << "Restruant: " << restruantInfo.name << " info" << endl;
+    cout << "Adress: " << restruantInfo.adress << endl;
 }
