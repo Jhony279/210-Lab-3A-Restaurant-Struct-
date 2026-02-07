@@ -43,12 +43,12 @@ Restruant getRestruantInfo(){
     getline(cin, restruant.adress);
 
     int openLate;
-    cout << "Does the restruant stay open late? (Enter true or false): ";
-    cin >> boolalpha >> openLate;
-    while (openLate != true && openLate != false){
+    cout << "Does the restruant close late? (Enter 1 = yes or 0 = no): ";
+    cin >> openLate;
+    while (openLate != 0 && openLate != 1){
         cout << "Invalid input\n";
         cout << "Does the restruant stay open late? (Enter true or false): ";
-        cin >> openLate;
+        cin >> boolalpha >> openLate;
     }
     restruant.openLate = openLate;
 
