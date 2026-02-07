@@ -1,0 +1,18 @@
+// COMSC-210 | Lab # | Johnathan Perez Baltazar
+
+#include <iostream>
+using namespace std;
+
+// Function Prototypes:
+
+// <description>
+// arguments: 
+// returns: 
+int main() {
+    return 0;
+}
+
+// Function Definitions:
+
+// Reminder lines must be 80 characters or less, no more than one empty line, no magic numbers,
+// and Reminder to comment code where neccessary.
