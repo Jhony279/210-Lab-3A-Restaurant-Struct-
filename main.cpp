@@ -12,6 +12,8 @@ struct Restruant{
     bool openLate;
 };
 
+const int daysIneWeek = 7;
+
 // Function Prototypes:
 
 Restruant getRestruantInfo();
@@ -61,7 +63,7 @@ Restruant getRestruantInfo(){
 
     cout << "How many days a week is the restruant open: ";
     cin >> restruant.amountOfDaysOpen;
-    while ((restruant.amountOfDaysOpen - 0) > 7 ||  isalpha(restruant.amountOfDaysOpen)){
+    while ((restruant.amountOfDaysOpen - 0) > daysIneWeek ||  isalpha(restruant.amountOfDaysOpen)){
         cout << "Invalid input enter a number from 1- 7\n";
         cin.clear();
         cin.ignore(1000, '\n');
