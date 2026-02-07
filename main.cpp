@@ -6,7 +6,7 @@ using namespace std;
 struct Restruant{
     string name;
     string adress;
-    float storeNumber;
+    int storeNumber;
     char amountOfDaysOpen;
     bool openLate;
 };
@@ -14,13 +14,15 @@ struct Restruant{
 // Function Prototypes:
 
 Restruant getRestruantInfo();
-void displayRestruantInfo();
+void displayRestruantInfo(Restruant);
 
 // <description>
 // arguments: 
 // returns: 
 int main() {
     Restruant restruant1 = getRestruantInfo();
+
+    displayRestruantInfo(restruant1);
     return 0;
 }
 
@@ -36,21 +38,21 @@ Restruant getRestruantInfo(){
     cout << "------------- Enter Restruant Information -------------" << endl;
     cout << "Enter the name of the restruant: ";
     getline(cin, restruant.name);
-    cout << "Enter the adress of the restruant: ";
+    cout << "What is the adress of the restruant: ";
     getline(cin, restruant.adress);
     cout << "Does the restruant stay open late? (Enter true or false): ";
     cin >> boolalpha >> restruant.openLate;
-    cout << "Enter the amount of days the restruant is open: ";
+    cout << "How many days a week is the restruant open: ";
     cin >> restruant.amountOfDaysOpen;
     cin.ignore(1000, '\n'); // Clear out remaining input before requesting next
-    cout << "Enter the phone number of the restruant: ";
+    cout << "What is the restruants phone number: ";
     cin >> restruant.storeNumber;
 
     return restruant;
 }
 
 void displayRestruantInfo(Restruant restruantInfo){
-    cout << "Restruant: " << restruantInfo.name << " information" << endl;
+    cout << "--Restruant: " << restruantInfo.name << " information--" << endl;
     cout << "Adress: " << restruantInfo.adress << endl;
     cout << "Phone Number: " << restruantInfo.storeNumber << endl;
     cout << "Days open a week: " << restruantInfo.amountOfDaysOpen << endl;
