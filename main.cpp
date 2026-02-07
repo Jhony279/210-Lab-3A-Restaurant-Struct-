@@ -1,9 +1,16 @@
-// COMSC-210 | Lab # | Johnathan Perez Baltazar
+// COMSC-210 | Lab 3A | Johnathan Perez Baltazar
 
 #include <iostream>
 using namespace std;
 
 // Function Prototypes:
+
+struct Restruant{
+    string name;
+    string adress;
+    int storeNumber;
+    bool openLate;
+};
 
 // <description>
 // arguments: 
