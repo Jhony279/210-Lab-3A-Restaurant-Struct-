@@ -3,10 +3,6 @@
 #include <iostream>
 using namespace std;
 
-// Function Prototypes:
-
-Restruant getRestruantInfo();
-
 struct Restruant{
     string name;
     string adress;
@@ -15,18 +11,23 @@ struct Restruant{
     bool openLate;
 };
 
+// Function Prototypes:
+
+Restruant getRestruantInfo();
+
 // <description>
 // arguments: 
 // returns: 
 int main() {
-    getRestruantInfo();
+    Restruant restruant1 = getRestruantInfo();
     return 0;
 }
 
 /**
  * @brief Creates a temporary `Restruant` struct by asking user for restruant
  * input from the console to feed into struct members.
- * @return restruant struct members to then pass and use in main function.
+ * @return temporary restruant struct members to then pass and use in
+ * the main function.
 */
 Restruant getRestruantInfo(){
     Restruant restruant;
@@ -43,7 +44,6 @@ Restruant getRestruantInfo(){
     cin.ignore(1000, '\n'); // Clear out remaining input before requesting next
     cout << "Enter the phone number of the restruant: ";
     cin >> restruant.storeNumber;
-}
 
-// Reminder lines must be 80 characters or less, no more than one empty line, no magic numbers,
-// and Reminder to comment code where neccessary.
+    return restruant;
+}
