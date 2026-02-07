@@ -1,10 +1,10 @@
-// COMSC-210 | Lab 3A | Johnathan Perez Baltazar
+// COMSC-210 | Lab-3A | Johnathan Perez Baltazar
 
 #include <iostream>
 #include <iomanip>
 using namespace std;
 
-struct Restruant{
+struct Restruant{               // Struct to hold restruant information
     string name;
     string adress;
     long long storeNumber;
@@ -15,23 +15,25 @@ struct Restruant{
 const int daysIneWeek = 7;      // Amount of days in a week
 const int restruantStored = 4;  // The amount of restruants to save info for
 
-// Function Prototypes:
-
 Restruant getRestruantInfo();
 void displayRestruantInfo(Restruant);
 
-// <description>
-// arguments: 
-// returns: 
+/**
+ * @brief Where the main code will execute other functions
+ * @return `Literal` 0
+*/ 
 int main() {
     Restruant savedRestruant[restruantStored];
 
-    for (i = 0; i < restruantStored; i++){
+    // Loops through the amount of restruants to be stored
+    for (int i = 0; i < restruantStored; i++){
         savedRestruant[i] = getRestruantInfo();
     }
 
-    for (i = 0; i < restruantStored; i++){
-        displayRestruantInfo(restruant1);
+    // Loops through the amount of restruants to be stored
+    // and displays the information of each restruant
+    for (int i = 0; i < restruantStored; i++){
+        displayRestruantInfo(savedRestruant[i]);
     }
     
     return 0;
@@ -46,7 +48,7 @@ int main() {
 Restruant getRestruantInfo(){
     Restruant restruant;
 
-    cout << "------------- Enter Restruant Information -------------" << endl;
+    cout << "\n------------ Enter Restruant Information ------------" << endl;
     cout << "Enter the name of the restruant: ";
     getline(cin, restruant.name);
     cout << "What is the adress of the restruant: ";
@@ -57,12 +59,13 @@ Restruant getRestruantInfo(){
     while (!valiInput){     
         cout << "Does the restruant close late? (Enter true or false): ";
         if (cin >> boolalpha >> restruant.openLate){
+            // If the user enters true or false then the loop will end
             if (restruant.openLate == true || restruant.openLate == false){
                 valiInput = true;
-            } else {
+            } else { // If the user enters a number the loop continues
                 cout << "Invalid input try agaian\n";
             }
-        } else {
+        } else { // If user enters a non numeric value the loop continues
             cout << "Invalid input try agaian\n";
             cin.clear();
             cin.ignore(1000, '\n');
@@ -71,8 +74,12 @@ Restruant getRestruantInfo(){
 
     cout << "How many days a week is the restruant open: ";
     cin >> restruant.amountOfDaysOpen;
-    while ((restruant.amountOfDaysOpen - '0') > daysIneWeek ||  isalpha(restruant.amountOfDaysOpen)){
+    // Filters the users input to make sure a number from 1-7 is entered
+    while ((restruant.amountOfDaysOpen - '0') > daysIneWeek ||  
+            isalpha(restruant.amountOfDaysOpen)){
         cout << "Invalid input enter a number from 1- 7\n";
+
+        // Remove all prevous input before asking user for new input
         cin.clear();
         cin.ignore(1000, '\n');
         cout << "How many days a week is the restruant open: ";
@@ -82,6 +89,8 @@ Restruant getRestruantInfo(){
     
     cout << "What is the restruants phone number: ";
     cin >> restruant.storeNumber;
+    cin.clear();
+    cin.ignore(1000, '\n');
 
     return restruant;
 }
