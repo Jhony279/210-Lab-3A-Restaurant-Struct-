@@ -50,6 +50,9 @@ Restruant getRestruantInfo(){
 }
 
 void displayRestruantInfo(Restruant restruantInfo){
-    cout << "Restruant: " << restruantInfo.name << " info" << endl;
+    cout << "Restruant: " << restruantInfo.name << " information" << endl;
     cout << "Adress: " << restruantInfo.adress << endl;
+    cout << "Phone Number: " << restruantInfo.storeNumber << endl;
+    cout << "Days open a week: " << restruantInfo.amountOfDaysOpen << endl;
+    cout << (restruantInfo.openLate ? "Store stays open late" : "Store closes early");
 }
