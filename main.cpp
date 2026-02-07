@@ -9,6 +9,7 @@ struct Restruant{
     string name;
     string adress;
     int storeNumber;
+    int amountOfDaysOpen;
     bool openLate;
 };
 
