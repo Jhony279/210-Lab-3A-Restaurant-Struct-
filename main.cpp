@@ -61,6 +61,14 @@ Restruant getRestruantInfo(){
 
     cout << "How many days a week is the restruant open: ";
     cin >> restruant.amountOfDaysOpen;
+    while ((restruant.amountOfDaysOpen - 0) > 7 ||  isalpha(restruant.amountOfDaysOpen)){
+        cout << "Invalid input enter a number from 1- 7\n";
+        cin.clear();
+        cin.ignore(1000, '\n');
+        cout << "How many days a week is the restruant open: ";
+        cin >> restruant.amountOfDaysOpen;
+    }
+    
     cin.ignore(1000, '\n'); // Clear out remaining input before requesting next
     cout << "What is the restruants phone number: ";
     cin >> restruant.storeNumber;
