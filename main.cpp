@@ -42,15 +42,22 @@ Restruant getRestruantInfo(){
     cout << "What is the adress of the restruant: ";
     getline(cin, restruant.adress);
 
-    int openLate;
-    cout << "Does the restruant close late? (Enter 1 = yes or 0 = no): ";
-    cin >> openLate;
-    while (openLate != 0 && openLate != 1){
-        cout << "Invalid input\n";
-        cout << "Does the restruant stay open late? (Enter true or false): ";
-        cin >> boolalpha >> openLate;
+    // Filters the users input to make sure true or false is entered
+    bool valiInput = false;
+    while (!valiInput){     
+        cout << "Does the restruant close late? (Enter true or false): ";
+        if (cin >> boolalpha >> restruant.openLate){
+            if (restruant.openLate == true || restruant.openLate == false){
+                valiInput = true;
+            } else {
+                cout << "Invalid input try agaian\n";
+            }
+        } else {
+            cout << "Invalid input try agaian\n";
+            cin.clear();
+            cin.ignore(1000, '\n');
+        }
     }
-    restruant.openLate = openLate;
 
     cout << "How many days a week is the restruant open: ";
     cin >> restruant.amountOfDaysOpen;
