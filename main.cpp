@@ -7,7 +7,7 @@ using namespace std;
 struct Restruant{
     string name;
     string adress;
-    int storeNumber;
+    long long storeNumber;
     char amountOfDaysOpen;
     bool openLate;
 };
@@ -52,12 +52,16 @@ Restruant getRestruantInfo(){
     return restruant;
 }
 
+/**
+ * @brief Prints out the passed information of the `Restruant` struct.
+ * @return Nothing
+*/
 void displayRestruantInfo(Restruant restruantInfo){
     
     cout << "\n------------------  Restruant: " << restruantInfo.name 
-        << " - information  ------------------" << setw(2) << endl;
-    cout << "Adress: " << restruantInfo.adress << endl;
-    cout << "Phone Number: " << restruantInfo.storeNumber << endl;
-    cout << "Days open a week: " << restruantInfo.amountOfDaysOpen << endl;
-    cout << "Store stays open late? : " << (restruantInfo.openLate ? "Yes" : "No");
+        << " - information  ------------------\n";
+    cout << " - Adress: " << restruantInfo.adress << endl;
+    cout << " - Phone Number: " << restruantInfo.storeNumber << endl;
+    cout << " - Days open a week: " << restruantInfo.amountOfDaysOpen << endl;
+    cout << " - Store stays open late? - " << (restruantInfo.openLate ? "Yes" : "No");
 }
