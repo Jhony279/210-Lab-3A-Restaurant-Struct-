@@ -41,8 +41,17 @@ Restruant getRestruantInfo(){
     getline(cin, restruant.name);
     cout << "What is the adress of the restruant: ";
     getline(cin, restruant.adress);
+
+    int openLate;
     cout << "Does the restruant stay open late? (Enter true or false): ";
-    cin >> boolalpha >> restruant.openLate;
+    cin >> boolalpha >> openLate;
+    while (openLate != true && openLate != false){
+        cout << "Invalid input\n";
+        cout << "Does the restruant stay open late? (Enter true or false): ";
+        cin >> openLate;
+    }
+    restruant.openLate = openLate;
+
     cout << "How many days a week is the restruant open: ";
     cin >> restruant.amountOfDaysOpen;
     cin.ignore(1000, '\n'); // Clear out remaining input before requesting next
@@ -59,9 +68,10 @@ Restruant getRestruantInfo(){
 void displayRestruantInfo(Restruant restruantInfo){
     
     cout << "\n------------------  Restruant: " << restruantInfo.name 
-        << " - information  ------------------\n";
+            << " - information  ------------------\n";
     cout << " - Adress: " << restruantInfo.adress << endl;
     cout << " - Phone Number: " << restruantInfo.storeNumber << endl;
     cout << " - Days open a week: " << restruantInfo.amountOfDaysOpen << endl;
-    cout << " - Store stays open late? - " << (restruantInfo.openLate ? "Yes" : "No");
+    cout << " - Restruant stays open late? - " 
+            << (restruantInfo.openLate ? "Yes\n" : "No\n") << " ";
 }
